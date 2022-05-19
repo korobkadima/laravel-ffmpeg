@@ -193,6 +193,11 @@ class MediaOpener
         return $this;
     }
 
+    public function getTemporaryDirectories(): self
+    {
+        return app(TemporaryDirectories::class)->getAll();
+    }
+
     public function each($items, callable $callback): self
     {
         Collection::make($items)->each(function ($item, $key) use ($callback) {

@@ -39,9 +39,19 @@ class TemporaryDirectories
     {
         $directory = $this->root . '/' . bin2hex(random_bytes(8));
 
-        mkdir($directory, 0777, true);
+        mkdir($directory, 0755, true);
 
         return $this->directories[] = $directory;
+    }
+
+    /**
+     * Returns temporary directories
+     *
+     * @return array
+     */
+    public function getAll(): array
+    {
+        return $this->directories;
     }
 
     /**
