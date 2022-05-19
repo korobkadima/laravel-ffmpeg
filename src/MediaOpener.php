@@ -193,7 +193,7 @@ class MediaOpener
         return $this;
     }
 
-    public function getTemporaryDirectories(): self
+    public function getTemporaryDirectories(): array
     {
         return app(TemporaryDirectories::class)->getAll();
     }
